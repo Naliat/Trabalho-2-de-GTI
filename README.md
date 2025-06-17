@@ -1,0 +1,33 @@
+```mermaid
+graph TD
+A[Início] --> B[Usuário reporta incidente]
+B -->|Portal, telefone, e-mail ou chatbot| C[Registro do incidente no sistema]
+C --> D[Dados do usuário, data/hora, descrição]
+D --> E[Verifica incidentes similares abertos]
+E --> F[Classificação: Categoria/Subcategoria]
+F --> G[Priorização: Impacto x Urgência]
+G --> H[Análise: Incidente recorrente?]
+H -- Sim --> I[Associar ao incidente-mestre]
+H -- Não --> J[Seguir para diagnóstico]
+J --> K[Diagnóstico inicial - Nível 1]
+K --> L{Solução conhecida?}
+L -- Sim --> M[Aplicar solução e testar]
+M -- Resolvido --> N[Comunicação e encerramento]
+M -- Não resolvido --> O[Escalonar]
+L -- Não --> P[Escalonar para Nível 2]
+O --> P
+P --> Q[Atendimento por Nível 2 ou Nível 3]
+Q --> R[Análise técnica aprofundada]
+R --> S[Contato com fornecedores ou desenvolvedores]
+S --> T[Solução aplicada]
+T --> U[Teste de eficácia]
+U --> V[Registro da causa raiz e ações corretivas]
+V --> W[Comunicação com o usuário]
+W --> X[Coletar feedback]
+X --> Y[Encerramento do incidente]
+Y --> Z[Documentação]
+Z --> AA[Classificação final]
+AA --> AB[Atualização de indicadores]
+AB --> AC{Caso crítico ou repetitivo?}
+AC -- Sim --> AD[Encaminhar para gestão de problemas - ITIL]
+AC -- Não --> AE[Fim]
